@@ -24,6 +24,8 @@ https://www.raspberrypi.org/forums/viewtopic.php?t=38206
 
 ## See Also
 
+ * http://invent.module143.com/daskal_tutorial/raspberry-pi-3-gpio-analog-sensor-mcp3008-mcp3004/
+ * https://raspi.tv/2016/using-mcp3008-to-measure-temperature-with-gpio-zero-and-raspio-pro-hat
  * https://learn.adafruit.com/send-raspberry-pi-data-to-cosm/connecting-the-cobbler-slash-mcp3008-slash-tmp36
  * https://learn.adafruit.com/send-raspberry-pi-data-to-cosm/python-script
  * https://www.raspberrypi-spy.co.uk/2013/10/analogue-sensors-on-the-raspberry-pi-using-an-mcp3008/

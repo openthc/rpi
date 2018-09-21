@@ -52,7 +52,3 @@ NOt Working
 	ST,+00000.00 lb
 	ST,+00000.00 lb
 
-## See Also
-
- * https://github.com/erjiang/usbscale
-
