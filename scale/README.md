@@ -52,3 +52,14 @@ NOt Working
 	ST,+00000.00 lb
 	ST,+00000.00 lb
 
+
+## Dependencies
+
+ * Python 3
+ * [pySerial](https://pyserial.readthedocs.io/en/latest/pyserial_api.html)
+
+
+## See Also
+
+ * https://github.com/erjiang/usbscale
+
