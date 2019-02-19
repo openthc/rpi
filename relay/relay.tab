@@ -1,7 +1,6 @@
 # name:physical-pin
 
-relay0:8
-relay1:10
-relay3:12
-relay4:16
-
+relay0:12
+relay1:16
+relay3:18
+relay4:22
