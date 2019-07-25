@@ -1,9 +1,47 @@
 <?php
 /**
-	A Cheap-Hack Print Server
-*/
+ * A Cheap-Hack Print Server
+ */
+
+$printer_name = 'Zebra_Technologies_ZTC_LP_2824_Plus';
+
 
 header('content-type: text/plain');
+header('x-openthc: print-server');
+
+switch ($_SERVER['REQUEST_METHOD']) {
+case 'GET':
+
+	$printer_info = shell_exec('/usr/bin/lpstat -s');
+
+	$printer_list = array();
+
+	if (preg_match_all('/^device for (\w+): (.+)$/m', $printer_info, $m)) {
+		// print_r($m);
+		foreach ($m[1] as $p) {
+			$printer_list[] = $p;
+		}
+	}
+
+	// Show the Known Printers?
+	echo "POST a FILE or LINK to print\n";
+	echo "\n";
+	echo "Default Printer: $printer_base\n";
+	echo "Other Printers:\n  ";
+	echo implode("\n  ", $printer_list);
+	echo "\n";
+	// var_dump($printer_list);
+
+
+	break;
+case 'POST':
+	// OK
+	break;
+default:
+	header('HTTP/1.1 405 Not Allowed', true, 405);
+	echo "Not Allowed\n";
+	exit(0);
+}
 
 //print_r($_SERVER);
 //print_r($_POST);
@@ -44,8 +82,8 @@ case 'print-link':
 if ($pdf_good) {
 
 	$cmd = array('/usr/bin/lp');
-	$cmd[] = '-d Star_TSP143_';
-	$cmd[] = $pdf_file;
+	$cmd[] = sprintf('-d %s', escapeshellarg($printer_name)); // '-d Star_TSP143_';
+	$cmd[] = escapeshellarg($pdf_file);
 	$cmd[] = '2>&1';
 	$cmd = implode(' ', $cmd);
 
