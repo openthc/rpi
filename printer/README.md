@@ -12,7 +12,7 @@ This device simply uses CUPS, configured to allow for remote configuration and p
 Any printers added to this device should have sharing enabled so they are visible to tablets and other systems.
 
 ```bash
-sudo apt-get install cups-filters cups-filters-core-drivers printer-driver-dymo
+sudo apt-get install cups cups-filters cups-filters-core-drivers printer-driver-dymo
 sudo apt-get install libcupsppdc1-dev libfontembed-dev libcupsmime1-dev libcupsimage2-dev libcupsfilters-dev libcups2-dev
 update-rc.d cups-browsed remove
 ```
