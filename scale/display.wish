@@ -1,0 +1,59 @@
+#!/usr/bin/wish
+
+wm title . "Scale Integration"
+
+# removes window decorations
+wm overrideredirect . yes
+wm geometry . 320x240
+wm geometry . [winfo screenwidth .]x[winfo screenheight .]+0+0
+# update idletasks               ;# updates the full-screen
+
+# stays on top - needed for Linux
+# wm attributes . -topmost yes   ;
+                               ;# on Win9x, if =no, alt-tab will malfunction
+
+frame .x -highlightthickness 0 -bg #fdfdfd
+place .x -x 0 -y 0 -relwidth 1 -relheight 1
+
+button .x.end -text "Close" -bg #ffdbff -font "arial 10 bold" \
+   -command "destroy ."
+place  .x.end -x 8 -y 8
+
+# set h [ [winfo screenheight .] / 2]
+set h [expr { [winfo screenheight .] / 2 }]
+
+set font [concat "Verdana " $h " bold"]
+
+label .l_weight -textvar show_weight -bd 4 -bg #ffffff -font $font -padx 16 -pady 8 -relief solid
+place .l_weight -x 64 -y 64 -w [expr { [ winfo vrootwidth .x ] - 128 } ]
+
+# bind . <Expose> "wm overrideredirect . yes; focus -force ."
+# bind . <KeyPress-Escape> x_iconify
+
+# proc x_iconify {} {
+#     wm overrideredirect . no
+#     wm iconify .
+# }
+
+proc file_slurp {path} {
+
+	set fp [open $path "r"]
+	set fb [read $fp]
+	close $fp
+	return $fb
+
+}
+
+# Timer Here to Read the Serial Port
+proc every {ms body} {
+    if 1 $body
+    after $ms [list after idle [info level 0]]
+}
+
+every 500 {
+
+	set buf [file_slurp "scale.out"]
+	set ::show_weight [string trim $buf]
+
+}
+

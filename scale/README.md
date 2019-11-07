@@ -16,16 +16,16 @@ Once captured the data from the scale can be published via any number of methods
 ## USB to Serial
 
 - ID 0403:6001 Future Technology Devices International, Ltd FT232 Serial (UART) IC
-NOt Working
 - ID 067b:2303 Prolific Technology, Inc. PL2303 Serial Port - Generic or Trendnet TU-S9
 
 
 ## Scale
 
 ### A&D FX-300i
-	- Has Scale ID, Supports GLP Reports over Serial
-	- Defaults: 2400, 7, Even, CRLF
-	- Works
+
+* Has Scale ID, Supports GLP Reports over Serial
+* Defaults: 2400, 7, Even, CRLF
+* Works
 	
 	Standard Line (A&D Standard Format):
 	ST,+0013.538  g
@@ -36,11 +36,12 @@ NOt Working
 	ST,+0013.544  g
 
 ## A&D HV-60KC
-	- Has Scale ID, Supports GLP Reports over Serial
-	- Update Setting to include the Output over Serial (see manual)
-	- Default: 2400, 7, Even, CRLF
-	- Has two ports for Output so settings may need to be on Port 1 or Port 2
-	- Looking AT the back of the unit, the Left is #2 and the Right is #1
+
+* Has Scale ID, Supports GLP Reports over Serial
+* Update Setting to include the Output over Serial (see manual)
+* Default: 2400, 7, Even, CRLF
+* Has two ports for Output so settings may need to be on Port 1 or Port 2
+* Looking AT the back of the unit, the Left is #2 and the Right is #1
 	
 	Line Format:
 	ST,+00000.00 lb
@@ -61,5 +62,4 @@ NOt Working
 
 ## See Also
 
- * https://github.com/erjiang/usbscale
-
+* https://github.com/erjiang/usbscale
