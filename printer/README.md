@@ -75,6 +75,9 @@ Once that is configured, then devices that want to print simply need to know abo
 
 ### SSL
 
+If you don't already have an SSL certificate for this system, you can generate one like this.
+You may need to also manually add this certificate to your browser.
+
     openssl req -x509 -newkey rsa:4096 \
         -subj '/C=US/ST=Washington/L=Seattle/O=OpenTHC/OU=Printer/CN=localhost' \
         -keyout emc-device.key -out emc-device.crt -days 3650
