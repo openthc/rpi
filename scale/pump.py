@@ -5,6 +5,9 @@
 
 import sys
 import serial
+from urllib.parse import urlencode
+from urllib.request import Request, urlopen
+
 
 port = "/dev/ttyUSB0"
 baud = 9600
@@ -19,9 +22,9 @@ if len(sys.argv) >= 2:
 
 #
 # Output to WebApplication
-webapp_link = None
+output_link = None
 if len(sys.argv) >= 3:
-	webapp_link = sys.argv[2]
+	output_link = sys.argv[2]
 
 
 #
@@ -40,17 +43,23 @@ while True:
 		print(">>>{0}[[[".format(line))
 		line_tmp = line
 
+		# Push Data to File
 		if (output_file):
 			fo = open(output_file, "w")
 			fo.write(str(line))
 			fo.close()
 		#/if
 
-		#if (webapp_link):
-		#	fo = open(webapp_link, "w")
-		#	fo.write(str(line))
-		#	fo.close()
-		##/if
+		# Push Data to Web
+		if (output_link):
+			output_data = {
+				'line': line
+			}
+			req = Request(output_link, urlencode(output_data).encode())
+			res = urlopen(req).read()
+			# Errors Ignored
+
+		#/if
 
 	# /if
 

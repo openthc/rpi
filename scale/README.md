@@ -18,7 +18,6 @@ Once captured the data from the scale can be published via any number of methods
 - ID 0403:6001 Future Technology Devices International, Ltd FT232 Serial (UART) IC
 - ID 067b:2303 Prolific Technology, Inc. PL2303 Serial Port - Generic or Trendnet TU-S9
 
-
 ## Scale
 
 ### A&D FX-300i
@@ -58,7 +57,8 @@ Once captured the data from the scale can be published via any number of methods
 
  * Python 3
  * [pySerial](https://pyserial.readthedocs.io/en/latest/pyserial_api.html)
-
+ ** Debian: python-serial
+ ** Gentoo: dev-python/pyserial
 
 ## See Also
 
