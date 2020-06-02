@@ -1,7 +1,23 @@
 # Scale Integration
 
 Scales with serial outputs can be connected to the Pi via USB-Serial connections.
-Then simply read the scale with the provided python script
+Then simply read the scale with the provided python script.
+
+Simply writes the current value to a file, which can be used by other services.
+
+```shell
+./pump.py scale.out
+```
+
+Or a more complex setup, feeding a webhook, running as service
+
+```shell
+nohup ./pump.py \
+  /dev/null \
+  'https://app.openthc.dev/api/v2017/scale?_={TOKEN}' \
+  >/dev/null 2>&1 &
+```
+
 
 ## Publishing
 
@@ -13,12 +29,18 @@ Once captured the data from the scale can be published via any number of methods
  * Redis+Pub/Sub
  * etc
 
+
 ## USB to Serial
 
 - ID 0403:6001 Future Technology Devices International, Ltd FT232 Serial (UART) IC
 - ID 067b:2303 Prolific Technology, Inc. PL2303 Serial Port - Generic or Trendnet TU-S9
 
 ## Scale
+
+This service works with nearly any scale that feeds data in via serial connection.
+The script configuration may need to be adjusted for the serial port parameters.
+Some scales output their data in different formats, this script doesn't care but the next consumer might.
+
 
 ### A&D FX-300i
 
@@ -34,6 +56,7 @@ Once captured the data from the scale can be published via any number of methods
 	0000000
 	ST,+0013.544  g
 
+
 ## A&D HV-60KC
 
 * Has Scale ID, Supports GLP Reports over Serial
@@ -44,13 +67,7 @@ Once captured the data from the scale can be published via any number of methods
 	
 	Line Format:
 	ST,+00000.00 lb
-	ST,+00000.00 lb
-	ST,+00000.00 lb
-	ST,+00000.00 lb
-	ST,+00000.00 lb
-	ST,+00000.00 lb
-	ST,+00000.00 lb
-	ST,+00000.00 lb
+	ST,+00000.00  g
 
 
 ## Dependencies
@@ -59,6 +76,7 @@ Once captured the data from the scale can be published via any number of methods
  * [pySerial](https://pyserial.readthedocs.io/en/latest/pyserial_api.html)
  ** Debian: python-serial
  ** Gentoo: dev-python/pyserial
+
 
 ## See Also
 
