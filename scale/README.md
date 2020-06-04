@@ -77,6 +77,12 @@ Some scales output their data in different formats, this script doesn't care but
  ** Debian: python-serial
  ** Gentoo: dev-python/pyserial
 
+### Windows
+
+On windows you'll need to install **git**.
+Get **Python** from the Windows Store.
+Install **pyserial** using **pip**.
+
 
 ## See Also
 
