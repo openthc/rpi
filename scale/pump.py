@@ -5,12 +5,21 @@
 
 import sys
 import serial
+import signal
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
-
 port = "/dev/ttyUSB0"
 baud = 9600
+
+
+#
+# Signal Handler
+def sigint_handler(s, f):
+	sys.exit(0)
+#/def
+
+signal.signal(signal.SIGINT, sigint_handler)
 
 
 #
@@ -36,6 +45,7 @@ line_tmp = ""
 while True:
 
 	line = ser.readline().strip()
+	line = line.decode("utf-8")
 	# print line.encode("hex")
 
 	if line != line_tmp:
