@@ -4,7 +4,9 @@ wm title . "Scale Integration"
 
 # removes window decorations
 wm overrideredirect . yes
-wm geometry . 320x240
+#wm geometry . 320x240
+
+# Full Screen
 wm geometry . [winfo screenwidth .]x[winfo screenheight .]+0+0
 # update idletasks               ;# updates the full-screen
 
@@ -20,7 +22,7 @@ button .x.end -text "Close" -bg #ffdbff -font "arial 10 bold" \
 place  .x.end -x 8 -y 8
 
 # set h [ [winfo screenheight .] / 2]
-set h [expr { [winfo screenheight .] / 2 }]
+set h [expr { [winfo screenheight .] / 16 }]
 
 set font [concat "Verdana " $h " bold"]
 
