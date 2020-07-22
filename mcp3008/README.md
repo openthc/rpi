@@ -9,14 +9,14 @@ It's cost effective and interfaces with [SPI](https://en.wikipedia.org/wiki/Seri
 We connect this to SPI0
 
  MCP3008 #1-8 <=> CH0-CH7 <=> Sensor
-    Dgnd   #9 <=> GND <=> GND-Rail
-      CS  #10 <=> BCM#8 <=> RPI#24
-     Din  #11 <=> BCM#10 <=> RPI#19
-    Dout  #12 <=> BCM#9  <=> RPI#21
-     CLK  #13 <=> BCM#11 <=> RPI#23
-    Agnd  #14 <=> GND <=> GND-Rail
-    Vref  #15 <=> 3V3 <=> 3v3 Vcc-Rail
-     Vdd  #16 <=> 3V3 <=> 3v3-Vcc-Rail
+    Dgnd   #9 <=> GND     <=> GND-Rail
+      CS  #10 <=> BCM#8   <=> PHY#24
+     Din  #11 <=> BCM#10  <=> PHY#19
+    Dout  #12 <=> BCM#9   <=> PHY#21
+     CLK  #13 <=> BCM#11  <=> PHY#23
+    Agnd  #14 <=> GND     <=> GND-Rail
+    Vref  #15 <=> 3V3     <=> 3v3 Vcc-Rail
+     Vdd  #16 <=> 3V3     <=> 3v3-Vcc-Rail
 
 
 ## Dependencies
