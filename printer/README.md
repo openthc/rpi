@@ -13,7 +13,7 @@ Any printers added to this device should have sharing enabled so they are visibl
 
 ```bash
 sudo apt-get install cups cups-filters cups-filters-core-drivers printer-driver-dymo
-sudo apt-get install libcupsppdc1-dev libfontembed-dev libcupsmime1-dev libcupsimage2-dev libcupsfilters-dev libcups2-dev
+sudo apt-get install libcups2-dev libcupsimage2-dev libcupsfilters-dev libcups2-dev libfontembed-dev
 update-rc.d cups-browsed remove
 ```
 
