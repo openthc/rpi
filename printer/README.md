@@ -32,9 +32,11 @@ Get whatever is the latest drivers from the [Star Micronics Support Page](http:/
 
 
 ```bash
-tar -zxf starcupsdrv-3.11.0_linux.tar.gz
-cd ./starcupsdrv-3.11.0_linux/SourceCode
-tar -zxf starcupsdrv-src-3.11.0.tar.gz
+pv="3.11.0"
+wget http://www.starmicronics.com/support/DriverFolder/drvr/starcupsdrv-${pv}_linux.tar.gz
+tar -zxf "starcupsdrv-${pv}_linux.tar.gz"
+cd "starcupsdrv-${pv}_linux/SourceCode
+tar -zxf starcupsdrv-src-${pv}.tar.gz
 cd ./starcupsdrv/
 make
 sudo make install
