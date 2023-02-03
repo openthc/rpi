@@ -6,6 +6,13 @@ These tools allow for web-applications, or local-network applications to print t
  * Receipt Printers
 
 
+## Installation
+
+On Linux generally your CUPS installation will have everything you need.
+
+On Windows you'll have to [install Python](https://www.python.org/downloads/windows/) and then `pip install pywin32`
+
+
 ## CUPS
 
 This device simply uses CUPS, configured to allow for remote configuration and printing.
@@ -85,3 +92,4 @@ You may need to also manually add this certificate to your browser.
         -subj '/C=US/ST=Washington/L=Seattle/O=OpenTHC/OU=Printer/CN=localhost' \
         -keyout emc-device.key -out emc-device.crt -days 3650
 
+* https://stackoverflow.com/questions/7580508/getting-chrome-to-accept-self-signed-localhost-certificate
