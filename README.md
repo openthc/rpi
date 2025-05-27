@@ -2,6 +2,17 @@
 
 A collection of documentation, scripts and tools for using Raspberry Pi in cannabis operations. 
 
+## Install
+
+```shell
+wget ''
+xz -d $IMAGE.xz
+dd bs=1M status=progress if=$IMAGE.img of=$DEV
+echo ',+' | sfdisk --force -N 2 /dev/mmcblk0
+resize2fs /dev/mmcblk0p2
+```
+
+
 ## Scale Support
 
 One or more scales can be connected to a RPi via Serial->USB adapters, you may need a high-speed USB hub if more than four scales are used.
